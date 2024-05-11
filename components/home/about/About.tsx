@@ -6,13 +6,19 @@ import Image from "next/image";
 import ImageSize from "@/utils/image-utils";
 import sahil from "@/public/assets/images/sahil-insta.jpg";
 import patern from "@/public/assets/svg/bnw-patern-splash-big.svg";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useMediaQuery } from "react-responsive";
 
 const About = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const isMobile = useMediaQuery({ maxWidth: 819 });
 
   const sahilRef = useRef<HTMLImageElement>(null);
@@ -89,7 +95,7 @@ const About = () => {
             ref={sahilRef}
           />
         </div>
-        {!isMobile && (
+        {isClient && !isMobile && (
           <div className="patern">
             <Image src={patern} alt="patern" fill sizes={ImageSize.cardSize} />
           </div>

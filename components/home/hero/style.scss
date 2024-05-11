@@ -11,10 +11,10 @@
     width: 100%;
     height: 100%;
     font-family: $helvetica-light;
-    font-size: 2rem;
+    font-size: 1.6rem;
     border: 0.1px solid $lightBorder;
     border-radius: 10px;
-    padding: 4vw;
+    padding: 6vw;
     position: relative;
     overflow: hidden;
 
@@ -27,6 +27,7 @@
       z-index: 2;
       color: $light;
       line-height: 1;
+      letter-spacing: 2px;
 
       &:nth-of-type(2) {
         text-align: right;
@@ -52,6 +53,12 @@
     height: calc(100vh - 40px - 6vw);
     height: calc(100svh - 40px - 6vw);
     padding: 0 1vw 1vw 1vw;
+
+    .hero-title {
+      font-size: 2rem;
+
+      padding: 4vw;
+    }
   }
 }
 

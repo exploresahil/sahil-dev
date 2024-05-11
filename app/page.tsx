@@ -3,6 +3,7 @@ import About from "@/components/home/about/About";
 import Hero from "@/components/home/hero/Hero";
 import { useLayoutEffect } from "react";
 import Lenis from "lenis";
+import Bio from "@/components/home/bio/Bio";
 
 export default function Home() {
   useLayoutEffect(() => {
@@ -20,6 +21,7 @@ export default function Home() {
     <>
       <Hero />
       <About />
+      <Bio />
     </>
   );
 }

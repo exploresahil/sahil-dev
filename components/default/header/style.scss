@@ -26,11 +26,11 @@ header {
     }
 
     a {
-      padding: 0 10px;
+      padding-left: 3vw;
 
       h2 {
         font-family: $bebas-bold;
-        font-size: 1, 6rem;
+        font-size: 1.6rem;
         font-weight: 100;
       }
     }
@@ -46,6 +46,10 @@ header {
     .header-container {
       padding: 1vw;
       border-radius: calc(5px + 0.5vw);
+
+      a {
+        padding-left: 3vw;
+      }
 
       #button {
         height: 40px;

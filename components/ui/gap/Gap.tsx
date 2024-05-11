@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import "./style.scss";
-import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -46,7 +45,7 @@ const Gap = ({ imageUrl, height }: GapProps) => {
     gsap.set(secondImg.current, { xPercent: xPercent });
     gsap.set(thirdImg.current, { xPercent: xPercent });
     requestAnimationFrame(animation);
-    xPercent += 0.05 * direction;
+    xPercent += 0.02 * direction;
   };
 
   return (
