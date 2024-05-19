@@ -39,10 +39,12 @@ const Bio = () => {
     gsap.fromTo(
       bioMainRef.current,
       {
-        backgroundColor: "rgba(10, 54, 157, 0.25)",
+        background:
+          "radial-gradient(circle at 50% 0%, rgba(10, 54, 157, 0) 0%,transparent 100%), rgba(15, 15, 15, 1)",
       },
       {
-        backgroundColor: "rgba(10, 54, 157, 1)",
+        background:
+          "radial-gradient(circle at 50% 0%, rgba(10, 54, 157, 0.5) 0%,transparent 100%), rgba(15, 15, 15, 1)",
         ease: "power1.inOut",
         scrollTrigger: {
           trigger: bioMainRef.current,
