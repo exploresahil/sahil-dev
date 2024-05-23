@@ -3,6 +3,7 @@
 import About from "@/components/home/about/About";
 import Bio from "@/components/home/bio/Bio";
 import HomeHero from "@/components/home/hero/HomeHero";
+import Skills from "@/components/home/skills/Skills";
 import Lenis from "lenis";
 import { useLayoutEffect } from "react";
 
@@ -23,6 +24,7 @@ export default function Home() {
       <HomeHero />
       <About />
       <Bio />
+      <Skills />
     </main>
   );
 }

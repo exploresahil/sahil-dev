@@ -3,4 +3,33 @@
 #bio {
   @include full-width;
   height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoint(medium) {
+    height: 40vh;
+  }
+
+  @include breakpoint(large) {
+    height: 100vh;
+  }
+
+  p {
+    font-size: rem(48);
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: rem(10);
+    @include rische;
+    line-height: 1.2;
+
+    @include breakpoint(large) {
+      font-size: rem(70);
+    }
+
+    span {
+      transform-origin: 0 100%;
+    }
+  }
 }

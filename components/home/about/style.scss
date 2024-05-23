@@ -13,6 +13,7 @@
   position: relative;
   color: $red;
   gap: rem(290);
+  overflow: hidden;
 
   @include breakpoint(medium) {
     height: 50vh;
@@ -76,9 +77,9 @@
     }
   }
 
-  .img-cont {
-    position: absolute;
+  .parallex {
     width: 80%;
+    position: absolute;
     aspect-ratio: 4 / 5;
     overflow: hidden;
     background-color: $dark;
@@ -91,9 +92,16 @@
       width: 20%;
     }
 
-    img {
-      background-color: $orange;
-      opacity: 0.8;
+    .img-cont {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      img {
+        background-color: $orange;
+        opacity: 0.8;
+        transform: scale(1.5);
+      }
     }
   }
 }

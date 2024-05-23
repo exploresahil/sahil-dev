@@ -1,0 +1,6 @@
+@use "@/app/scss/variables" as *;
+
+#skills {
+  @include full-width;
+  height: 100vh;
+}
