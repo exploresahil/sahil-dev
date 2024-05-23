@@ -32,14 +32,16 @@ const PageNotFound = () => {
   }, []);
 
   const animation = () => {
-    if (xPercent <= -100) {
-      xPercent = 0;
+    if (firstText.current && secondText.current && thirdText.current) {
+      if (xPercent <= -100) {
+        xPercent = 0;
+      }
+      gsap.set(firstText.current, { xPercent: xPercent });
+      gsap.set(secondText.current, { xPercent: xPercent });
+      gsap.set(thirdText.current, { xPercent: xPercent });
+      xPercent += 0.05 * direction;
+      requestAnimationFrame(animation);
     }
-    gsap.set(firstText.current, { xPercent: xPercent });
-    gsap.set(secondText.current, { xPercent: xPercent });
-    gsap.set(thirdText.current, { xPercent: xPercent });
-    xPercent += 0.05 * direction;
-    requestAnimationFrame(animation);
   };
 
   return (

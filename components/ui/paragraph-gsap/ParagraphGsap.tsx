@@ -19,7 +19,7 @@ const ParagraphGsap = ({ text }: { text: string }) => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(CustomEase);
-    if (bioRef.current) {
+    if (bioRef.current && bioMainRef.current) {
       //console.log("bioRef->", bioRef.current.querySelectorAll("span"));
 
       const sapns = bioRef.current.querySelectorAll("span");
