@@ -1,0 +1,30 @@
+@use "@/app/scss/variables" as *;
+
+header {
+  @include full-width;
+  height: rem(40);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include breakpoint(large) {
+    border-bottom: rem(0.5) solid red;
+  }
+
+  a {
+    font-size: rem(12);
+  }
+
+  .contact {
+    border: rem(0.5) solid $red;
+    padding: rem(6) rem(18);
+    border-radius: rem(1000);
+
+    @include breakpoint(large) {
+      border: none;
+      padding: none;
+
+      font-family: $helvetica-bold;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+#star {
+  svg {
+    display: block;
+    animation: rotate 5s infinite linear;
+    position: relative;
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

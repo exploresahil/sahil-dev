@@ -1,0 +1,65 @@
+@use "@/app/scss/variables" as *;
+
+#notFound {
+  @include full-width;
+  height: calc(100vh - rem(40) - 4vw);
+  height: calc(100svh - rem(40) - 4vw);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 100px;
+
+  @include breakpoint(large) {
+    padding-bottom: 20px;
+  }
+
+  .slider-container {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    gap: 20px;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    .slider {
+      display: flex;
+
+      h2 {
+        font-size: rem(120);
+        padding-bottom: 10px;
+        padding-left: 20px;
+        display: flex;
+        gap: 20px;
+
+        span {
+          display: block;
+          height: fit-content;
+          width: fit-content;
+        }
+      }
+    }
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    @include breakpoint(large) {
+      gap: 20px;
+    }
+
+    p {
+      font-size: rem(16);
+      font-family: $helvetica-light;
+
+      @include breakpoint(large) {
+        font-size: rem(20);
+      }
+    }
+  }
+}

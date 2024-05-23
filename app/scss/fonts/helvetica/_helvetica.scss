@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "Helvetica Now Display Bold";
+  src: url("./HelveticaNowDisplay-Bold.eot");
+  src: local("Helvetica Now Display Bold"), local("./HelveticaNowDisplay-Bold"),
+    url("./HelveticaNowDisplay-Bold.eot?#iefix") format("embedded-opentype"),
+    url("./HelveticaNowDisplay-Bold.woff2") format("woff2"),
+    url("./HelveticaNowDisplay-Bold.woff") format("woff"),
+    url("./HelveticaNowDisplay-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Now Display Regular";
+  src: url("./HelveticaNowDisplay-Regular.eot");
+  src: local("Helvetica Now Display Regular"),
+    local("./HelveticaNowDisplay-Regular"),
+    url("./HelveticaNowDisplay-Regular.eot?#iefix") format("embedded-opentype"),
+    url("./HelveticaNowDisplay-Regular.woff2") format("woff2"),
+    url("./HelveticaNowDisplay-Regular.woff") format("woff"),
+    url("./HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Now Display Medium";
+  src: url("./HelveticaNowDisplay-Medium.eot");
+  src: local("Helvetica Now Display Medium"),
+    local("./HelveticaNowDisplay-Medium"),
+    url("./HelveticaNowDisplay-Medium.eot?#iefix") format("embedded-opentype"),
+    url("./HelveticaNowDisplay-Medium.woff2") format("woff2"),
+    url("./HelveticaNowDisplay-Medium.woff") format("woff"),
+    url("./HelveticaNowDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Now Display Light";
+  src: url("./HelveticaNowDisplay-Light.eot");
+  src: local("Helvetica Now Display Medium"),
+    local("./HelveticaNowDisplay-Medium"),
+    url(".//HelveticaNowDisplay-Light.eot") format("embedded-opentype"),
+    url(".//HelveticaNowDisplay-Light.woff2") format("woff2"),
+    url(".//HelveticaNowDisplay-Light.woff") format("woff"),
+    url(".//HelveticaNowDisplay-Light.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}

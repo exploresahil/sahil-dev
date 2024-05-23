@@ -1,0 +1,99 @@
+@use "@/app/scss/variables" as *;
+
+#about {
+  @include full-width;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: $red;
+  gap: rem(290);
+
+  @include breakpoint(medium) {
+    height: 50vh;
+  }
+  @include breakpoint(large) {
+    height: 100vh;
+  }
+
+  img {
+    object-fit: cover;
+    filter: saturate(0);
+  }
+
+  h2 {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-size: rem(34);
+    line-height: 1.2;
+
+    @include breakpoint(medium) {
+      width: 40%;
+      font-size: rem(40);
+    }
+
+    @include breakpoint(large) {
+      width: 35%;
+      font-size: rem(44);
+    }
+  }
+
+  h3 {
+    @include rische;
+    font-size: rem(24);
+  }
+
+  .text-cont {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: $offLight;
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+    width: 80%;
+
+    @include breakpoint(medium) {
+      width: 30%;
+    }
+
+    @include breakpoint(large) {
+      width: 30%;
+    }
+
+    p {
+      font-family: $helvetica-light;
+
+      @include breakpoint(large) {
+        font-size: rem(18);
+      }
+    }
+  }
+
+  .img-cont {
+    position: absolute;
+    width: 80%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background-color: $dark;
+
+    @include breakpoint(medium) {
+      width: 30%;
+    }
+
+    @include breakpoint(large) {
+      width: 20%;
+    }
+
+    img {
+      background-color: $orange;
+      opacity: 0.8;
+    }
+  }
+}

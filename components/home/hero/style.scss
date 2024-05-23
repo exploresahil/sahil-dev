@@ -1,0 +1,157 @@
+@use "@/app/scss/variables" as *;
+
+#homeHero {
+  @include full-width;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include breakpoint(medium) {
+    height: 50vh;
+    height: 50svh;
+  }
+
+  @include breakpoint(large) {
+    height: 100vh;
+    height: 100svh;
+  }
+
+  .container {
+    position: relative;
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+    margin-top: rem(-100);
+
+    @include breakpoint(medium) {
+      margin-top: rem(0);
+    }
+
+    @include breakpoint(large) {
+      gap: rem(40);
+      margin-top: rem(0);
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+    h2 {
+      opacity: 0;
+      font-size: rem(16);
+      text-transform: uppercase;
+
+      @include breakpoint(large) {
+        font-size: rem(30);
+      }
+    }
+
+    h1 {
+      font-size: rem(80);
+      display: flex;
+      flex-direction: column;
+
+      span {
+        opacity: 0;
+      }
+
+      @include breakpoint(medium) {
+        font-size: rem(200);
+      }
+
+      @include breakpoint(large) {
+        font-size: rem(235);
+      }
+
+      @include breakpoint(xlarge) {
+        font-size: rem(280);
+      }
+    }
+
+    .star {
+      opacity: 0;
+
+      #star {
+        $size: rem(14);
+        width: $size;
+        height: $size;
+
+        @include breakpoint(medium) {
+          $size: rem(30);
+          width: $size;
+          height: $size;
+        }
+      }
+    }
+  }
+
+  .img-cont {
+    width: 45%;
+    aspect-ratio: 4 / 5;
+    position: relative;
+    margin-top: -12%;
+    opacity: 0;
+
+    @include breakpoint(medium) {
+      width: 20%;
+      margin-top: -34%;
+    }
+
+    @include breakpoint(large) {
+      width: 15%;
+      margin-top: -26%;
+    }
+
+    @include breakpoint(xlarge) {
+      margin-top: -18%;
+      width: 10%;
+    }
+
+    img {
+      object-fit: cover;
+      filter: saturate(0);
+    }
+  }
+
+  .sub {
+    margin-top: 10%;
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: rem(16);
+    opacity: 0;
+
+    @include breakpoint(medium) {
+      margin-top: 14%;
+    }
+
+    @include breakpoint(large) {
+      margin-top: 8%;
+    }
+
+    .scroll {
+      position: relative;
+      top: 180%;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: rem(12);
+
+      @include breakpoint(medium) {
+        top: 80%;
+      }
+
+      @include breakpoint(large) {
+        top: 40%;
+      }
+    }
+  }
+}

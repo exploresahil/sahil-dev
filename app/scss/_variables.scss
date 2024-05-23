@@ -1,0 +1,93 @@
+@use "sass:math";
+@use "./fonts/helvetica/helvetica";
+@use "./fonts/outward/outward";
+@use "./fonts/bebas/bebas";
+@use "./fonts/rische/rische";
+
+$helvetica-regular: "Helvetica Now Display Regular", sans-serif;
+$helvetica-medium: "Helvetica Now Display Medium", sans-serif;
+$helvetica-bold: "Helvetica Now Display Bold", sans-serif;
+$helvetica-light: "Helvetica Now Display Light", sans-serif;
+
+$outward: "Outward-block", sans-serif;
+$outward-borders: "Outward-borders", sans-serif;
+$outward-round: "Outward-round", sans-serif;
+
+$bebas: "bebas_neueregular", sans-serif;
+$bebas-bold: "bebas_neuebold", sans-serif;
+$bebas-book: "bebas_neuebook", sans-serif;
+$bebas-light: "bebas_neuelight", sans-serif;
+$bebas-thin: "bebas_neuethin", sans-serif;
+
+$rische: "rische", serif;
+
+$dark: #000000;
+$light: #ffffff;
+$green: #03c147;
+$blue: #5cb6eb;
+$yellow: #fed001;
+$red: #d92e1c;
+$pink: #dea6af;
+$offLight: #f0efed;
+$offDark: #0a0a0a;
+$orange: #fe8a3d;
+$purple: #7649be;
+$seaBlue: #214287;
+$darkBlue: #0a369d;
+$lightBorder: rgba(255, 255, 255, 0.4);
+
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    @error 'Don\'t use units when using the rem() function; only numbers.';
+  }
+}
+
+@function em($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + em;
+  } @else {
+    @error 'Don\'t use units when using the em() function; only numbers.';
+  }
+}
+
+@mixin rische {
+  font-family: $rische;
+  font-weight: 500;
+  line-height: 0.8;
+}
+
+$breakpoint-up: (
+  "medium": em(820),
+  "large": em(1025),
+  "xlarge": em(2040),
+);
+
+$breakpoint-down: (
+  "medium": em(819.98),
+  "large": em(1023.98),
+  "xlarge": em(2039.98),
+);
+
+@mixin breakpoint($size) {
+  @media screen and (min-width: map-get($breakpoint-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media screen and (min-width: map-get($breakpoint-down, $size)) {
+    @content;
+  }
+}
+
+@mixin full-width {
+  width: 100vw;
+  max-width: 100%;
+  padding-inline: 4vw;
+
+  @include breakpoint(xlarge) {
+    padding-inline: 10vw;
+  }
+}
