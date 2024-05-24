@@ -1,0 +1,30 @@
+@use "@/app/scss/variables" as *;
+
+#spacer {
+  @include full-width;
+  padding-block: rem(20);
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+
+  .line {
+    width: 100%;
+    height: rem(0.5);
+    background-color: $red;
+  }
+
+  #star {
+    $size: rem(36);
+    width: $size;
+    height: $size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint(medium) {
+      $size: rem(40);
+      width: $size;
+      height: $size;
+    }
+  }
+}

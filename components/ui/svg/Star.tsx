@@ -16,7 +16,7 @@ interface Props {
 const Star = ({
   fill = "#d92e1c",
   size,
-  position = "absolute",
+  position,
   top,
   right,
   bottom,

@@ -1,0 +1,37 @@
+@use "@/app/scss/variables" as *;
+
+#workflow {
+  @include full-width;
+  padding-block: rem(60);
+  display: flex;
+  flex-direction: column;
+  gap: rem(40);
+
+  h2 {
+    font-size: rem(40);
+  }
+
+  #accordian {
+    display: flex;
+    flex-direction: column;
+
+    .accordian {
+      border-top: rem(0.5) solid $red;
+      padding-block: rem(20);
+      display: flex;
+      flex-direction: column;
+      gap: rem(10);
+
+      &:nth-last-of-type(1) {
+        border-bottom: rem(0.5) solid $red;
+      }
+
+      button {
+        text-transform: uppercase;
+        font-size: rem(20);
+        text-align: left;
+        cursor: pointer;
+      }
+    }
+  }
+}

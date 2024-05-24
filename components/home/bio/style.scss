@@ -15,6 +15,9 @@
   @include breakpoint(large) {
     height: 100vh;
   }
+  @include breakpoint(xlarge) {
+    height: 50vh;
+  }
 
   p {
     font-size: rem(48);

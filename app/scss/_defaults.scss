@@ -44,4 +44,10 @@ h2 {
 button {
   background: none;
   border: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
 }

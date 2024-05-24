@@ -2,5 +2,70 @@
 
 #skills {
   @include full-width;
-  height: 100vh;
+  padding-block: rem(100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .skills-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+
+    h2 {
+      width: fit-content;
+      font-size: rem(40);
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: rem(10);
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      gap: rem(40);
+
+      @include breakpoint(medium) {
+        flex-direction: row;
+      }
+      @include breakpoint(xlarge) {
+        gap: rem(140);
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: rem(10);
+
+        @include breakpoint(medium) {
+          gap: rem(20);
+        }
+
+        h3 {
+          font-family: $helvetica-light;
+          font-size: rem(16);
+          text-transform: uppercase;
+          letter-spacing: rem(1);
+        }
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          gap: rem(10);
+
+          @include breakpoint(xlarge) {
+            max-width: 60%;
+          }
+
+          li {
+            border: rem(0.5) solid $red;
+            padding: rem(6) rem(18);
+            border-radius: rem(1000);
+          }
+        }
+      }
+    }
+  }
 }

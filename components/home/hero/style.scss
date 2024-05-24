@@ -80,6 +80,7 @@
         $size: rem(14);
         width: $size;
         height: $size;
+        position: absolute;
 
         @include breakpoint(medium) {
           $size: rem(30);
