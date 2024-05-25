@@ -31,10 +31,18 @@
       height: 100%;
       position: relative;
 
-      img {
-        object-fit: cover;
+      video {
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
         filter: grayscale(1);
+        object-fit: cover;
         object-position: 50% 70%;
+
+        @include breakpoint(large) {
+          object-position: 50% 80%;
+        }
       }
     }
   }

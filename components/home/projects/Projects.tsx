@@ -39,12 +39,9 @@ const Projects = () => {
       <section id="homeProjects">
         <div className="left">
           <div className="img-cont">
-            <Image
-              src={sahil}
-              alt="Sahil Satpute image"
-              fill
-              sizes={ImageSize.bannerSizes}
-            />
+            <video autoPlay loop muted playsInline preload="metadata">
+              <source src="/assets/videos/tv.webm" />
+            </video>
           </div>
         </div>
         <div className="right">
