@@ -41,7 +41,7 @@ const ParagraphGsap = ({ text }: { text: string }) => {
             trigger: bioMainRef.current,
             //markers: true,
             scrub: 0.02,
-            start: isTablet ? "center bottom" : "15% bottom",
+            start: isTablet ? "center bottom" : "25% bottom",
             end: isTablet ? "center 60%" : "center center",
           },
         }

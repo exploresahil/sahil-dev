@@ -1,6 +1,6 @@
 @use "@/app/scss/variables" as *;
 
-#workflow {
+#ask {
   @include full-width;
   padding-block: rem(50);
   display: flex;
@@ -19,12 +19,8 @@
     border-radius: rem(10);
     aspect-ratio: 2 / 1.2;
 
-    @include breakpoint(medium) {
-      aspect-ratio: 2 / 1;
-    }
     @include breakpoint(large) {
       height: 100%;
-      grid-column: 2 / 3;
     }
 
     .img-cont {
@@ -46,12 +42,11 @@
 
     @include breakpoint(large) {
       height: 100%;
-      grid-column: 1 / 2;
-      grid-row: 1 / 2;
     }
 
     h2 {
       font-size: rem(40);
+      line-height: 1.1;
     }
 
     #accordian {

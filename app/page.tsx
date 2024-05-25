@@ -1,6 +1,7 @@
 "use client";
 
 import About from "@/components/home/about/About";
+import Ask from "@/components/home/ask/Ask";
 import Bio from "@/components/home/bio/Bio";
 import HomeHero from "@/components/home/hero/HomeHero";
 import Projects from "@/components/home/projects/Projects";
@@ -32,6 +33,7 @@ export default function Home() {
       <Spacer />
       <Projects />
       <Workflow />
+      <Ask />
     </main>
   );
 }

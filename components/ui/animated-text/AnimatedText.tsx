@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 

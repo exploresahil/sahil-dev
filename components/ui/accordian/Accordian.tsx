@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { AiOutlinePlus } from "react-icons/ai";
 
 interface Props {
   data: {
@@ -29,13 +30,24 @@ const Accordian = ({ data }: Props) => {
     },
   };
 
+  const buttonStyles = { display: "flex", justifyContent: "space-between" };
+
   return (
     <div id="accordian">
       {data.map((item, i) => {
         const isOpen = openIndex === i;
         return (
           <div key={i} className="accordian">
-            <button onClick={() => handleToggle(i)}>{item.title}</button>
+            <button onClick={() => handleToggle(i)} style={buttonStyles}>
+              {item.title}{" "}
+              <motion.span
+                animate={{ rotate: isOpen ? -45 : 0 }}
+                transition={{ duration: 0.3 }}
+                style={{ transformOrigin: "center", display: "block" }}
+              >
+                <AiOutlinePlus />
+              </motion.span>
+            </button>
             <AnimatePresence initial={false}>
               {isOpen && (
                 <motion.div
@@ -47,7 +59,7 @@ const Accordian = ({ data }: Props) => {
                   style={{ overflow: "hidden" }}
                 >
                   <div className="desc">
-                    <p>{item.desc}</p>
+                    <p dangerouslySetInnerHTML={{ __html: item.desc }} />
                   </div>
                 </motion.div>
               )}

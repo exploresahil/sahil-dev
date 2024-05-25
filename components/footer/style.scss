@@ -1,0 +1,61 @@
+@use "@/app/scss/variables" as *;
+
+footer {
+  @include full-width;
+  padding-block: rem(50);
+
+  .footer-cont {
+    background-color: $red;
+    color: $offLight;
+    padding: 4vw;
+    display: grid;
+    gap: rem(50);
+    position: relative;
+
+    #menu {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: rem(10);
+      row-gap: rem(5);
+      letter-spacing: rem(0.5);
+
+      a {
+        @include breakpoint(medium) {
+          width: fit-content;
+        }
+      }
+
+      @include breakpoint(medium) {
+        font-size: rem(18);
+      }
+    }
+
+    .bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      .logo {
+        @include rische;
+        font-size: rem(40);
+        width: min-content;
+        line-height: 1;
+
+        @include breakpoint(medium) {
+          font-size: rem(50);
+        }
+      }
+
+      .social {
+        display: flex;
+        gap: rem(10);
+
+        @include breakpoint(medium) {
+          svg {
+            font-size: rem(20);
+          }
+        }
+      }
+    }
+  }
+}
