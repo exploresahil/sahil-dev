@@ -33,6 +33,7 @@ const animateListItems = (
         scrollTrigger: {
           trigger: trigger,
           //markers: true,
+          //scrub: 0.02,
           start: startCondition,
         },
         duration: 0.3,

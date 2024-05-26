@@ -55,6 +55,15 @@ footer {
             font-size: rem(20);
           }
         }
+
+        @include breakpoint(large) {
+          gap: rem(2);
+          margin-bottom: rem(-5);
+
+          a {
+            padding: rem(5);
+          }
+        }
       }
     }
   }

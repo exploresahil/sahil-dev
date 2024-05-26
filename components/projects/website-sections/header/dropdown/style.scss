@@ -1,0 +1,131 @@
+@use "@/app/scss/variables" as *;
+
+#projectsDropdown {
+  align-self: flex-end;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: rem(2);
+    $size: rem(22);
+    border: rem(0.5) solid $red;
+    padding: rem(5) rem(10);
+    border-radius: rem(1000);
+    cursor: pointer;
+  }
+
+  .menu-cont {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 999;
+    overflow: hidden;
+    color: $offLight;
+  }
+
+  nav {
+    width: 100%;
+    height: 100%;
+    background-color: $red;
+    display: flex;
+    flex-direction: column;
+    gap: rem(50);
+    padding: rem(100) 4vw;
+
+    @include breakpoint(medium) {
+      width: 50%;
+      margin-left: auto;
+      gap: rem(80);
+    }
+
+    @include breakpoint(large) {
+      width: 30%;
+    }
+
+    @include breakpoint(xlarge) {
+      padding-right: 10vw;
+    }
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+
+      h2 {
+        font-size: rem(40);
+        line-height: 1;
+
+        @include breakpoint(medium) {
+          max-width: 50%;
+        }
+      }
+
+      button {
+        align-self: flex-start;
+        border: none;
+
+        svg {
+          font-size: rem(22);
+        }
+      }
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(10);
+      max-height: 50vh;
+      overflow-y: scroll;
+      padding-right: rem(5);
+      padding-block: rem(5);
+
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $offLight;
+        border-radius: 100px;
+      }
+
+      scrollbar-width: 5px;
+      scrollbar-color: $offLight rgba(255, 255, 255, 0.15);
+
+      @include breakpoint(medium) {
+        max-height: 60vh;
+      }
+
+      a {
+        padding: rem(8) rem(16);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: rem(0.5) solid $offLight;
+        border-radius: rem(1000);
+        gap: rem(10);
+        font-size: rem(14);
+
+        @include breakpoint(large) {
+          transition: background 300ms cubic-bezier(0.45, 0, 0.55, 1);
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+        }
+
+        #star {
+          $size: rem(14);
+          width: $size;
+          height: $size;
+          position: absolute;
+        }
+      }
+    }
+  }
+}

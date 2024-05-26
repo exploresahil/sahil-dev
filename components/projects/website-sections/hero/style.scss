@@ -1,0 +1,12 @@
+@use "@/app/scss/variables" as *;
+
+#webSecHero {
+  @include full-width;
+  height: 100vh;
+  padding-block: rem(100);
+
+  h2 {
+    line-height: 1;
+    text-align: center;
+  }
+}

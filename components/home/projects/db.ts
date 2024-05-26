@@ -3,7 +3,7 @@ const projectsList = [
     number: "01",
     title: "Website Sections",
     description: "DESIGN | ANIMATION | NEXT | 2023",
-    href: "/projects/hover-image-slide-effect",
+    href: "/projects/website-sections/hover-image-slide-effect",
   },
   {
     number: "02",

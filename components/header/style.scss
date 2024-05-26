@@ -20,7 +20,7 @@ header {
     padding: rem(6) rem(18);
     border-radius: rem(1000);
 
-    @include breakpoint(large) {
+    @include breakpoint(medium) {
       border: none;
       padding: none;
 
