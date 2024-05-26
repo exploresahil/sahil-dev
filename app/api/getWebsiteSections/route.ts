@@ -1,7 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import navItems from "@/components/projects/db";
 import { NextResponse } from "next/server";
+import navItems from "@/components/projects/db";
 
-export const GET = (req: NextApiRequest, res: NextApiResponse) => {
+export const GET = (req: Request) => {
   return NextResponse.json({ data: navItems });
 };
