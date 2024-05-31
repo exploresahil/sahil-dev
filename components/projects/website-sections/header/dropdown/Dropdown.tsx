@@ -9,6 +9,7 @@ import Star from "@/components/ui/svg/Star";
 import { motion, AnimatePresence } from "framer-motion";
 import { opacity, slideLeft } from "@/utils/anim";
 import AnimatedText from "@/components/ui/animated-text/AnimatedText";
+import { usePathname } from "next/navigation";
 
 type Props = {
   setSelectedData: Dispatch<SetStateAction<string>>;
@@ -20,27 +21,26 @@ type Props = {
 const Dropdown = ({ setSelectedData, data, isOpen, setOpen }: Props) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(0);
 
+  const pathname = usePathname();
+  const currentSlug = pathname.split("/").pop();
+
+  useEffect(() => {
+    const matchingNavItem = data.findIndex((item) => item.slug === currentSlug);
+    if (matchingNavItem !== -1) {
+      setSelectedItemIndex(matchingNavItem);
+      setSelectedData(data[matchingNavItem].title);
+    }
+  }, [currentSlug, data, setSelectedData]);
+
   const handleItemClick = (index: number, title: string) => {
     setSelectedItemIndex(index);
     setSelectedData(title);
     setOpen(false);
   };
 
-  useEffect(() => {
-    const closeMenu = (e: MouseEvent) => {
-      if (!e.target || !(e.target instanceof Element)) return;
-
-      if (!e.target.closest("#productsNav")) {
-        setOpen(false);
-      }
-    };
-
-    document.body.addEventListener("click", closeMenu);
-
-    return () => {
-      document.body.removeEventListener("click", closeMenu);
-    };
-  }, [setOpen]);
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <div id="projectsDropdown">
@@ -55,6 +55,7 @@ const Dropdown = ({ setSelectedData, data, isOpen, setOpen }: Props) => {
             animate="enter"
             exit="exit"
             className="menu-cont"
+            onClick={handleClose}
           >
             <motion.nav
               variants={slideLeft}
@@ -62,6 +63,7 @@ const Dropdown = ({ setSelectedData, data, isOpen, setOpen }: Props) => {
               animate="enter"
               exit="exit"
               id="productsNav"
+              onClick={(e) => e.stopPropagation()}
             >
               <div className="title">
                 <h2>Website Sections</h2>

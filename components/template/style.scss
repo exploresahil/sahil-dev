@@ -1,0 +1,62 @@
+@use "@/app/scss/variables" as *;
+
+#template {
+  .temp-container {
+    .panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: $red;
+      z-index: 100;
+    }
+
+    #panelOne {
+      top: 0;
+      height: calc(100% / 4);
+    }
+
+    #panelTwo {
+      top: 25%;
+      height: calc(100% / 4);
+    }
+
+    #panelThree {
+      top: 50%;
+      height: calc(100% / 4);
+    }
+    #panelFour {
+      top: 75%;
+      height: calc(100% / 4);
+    }
+
+    @include breakpoint(large) {
+      #panelOne {
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: calc(100% / 4);
+      }
+
+      #panelTwo {
+        height: 100%;
+        top: 0;
+        left: 25%;
+        width: calc(100% / 4);
+      }
+
+      #panelThree {
+        height: 100%;
+        top: 0;
+        left: 50%;
+        width: calc(100% / 4);
+      }
+      #panelFour {
+        height: 100%;
+        top: 0;
+        left: 75%;
+        width: calc(100% / 4);
+      }
+    }
+  }
+}

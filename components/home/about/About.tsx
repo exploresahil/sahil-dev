@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import "./style.scss";
-import ImageSize from "@/app/utils/image-utils";
+import ImageSize from "@/utils/image-utils";
 import sahil from "@/public/assets/images/profile/sahil_wes_.png";
 import bg from "@/public/assets/images/bg/bg.jpg";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";

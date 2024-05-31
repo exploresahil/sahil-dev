@@ -1,5 +1,8 @@
 import Projects from "../home/projects/Projects";
-import HoverImageSlideAnimation from "./website-sections/components/HoverImageSlideAnimation/HoverImageSlideAnimation";
+import HoverImageSlideMenu from "./website-sections/components/HoverImageSlideMenu/HoverImageSlideMenu";
+import MaskCursorEffect from "./website-sections/components/MaskCursorEffect/MaskCursorEffect";
+import ParallaxScroll from "./website-sections/components/ParallaxScroll/ParallaxScroll";
+
 import PixelCursorMove from "./website-sections/components/PixelCursorMove/PixelCursorMove";
 
 export interface navItemsType {
@@ -10,9 +13,29 @@ export interface navItemsType {
 
 const navItems: navItemsType[] = [
   {
-    title: "Hover Image Slide Animation",
-    slug: "hover-image-slide-effect",
+    title: "Parallax Scroll",
+    slug: "parallax-scroll",
+    component: ParallaxScroll,
+  },
+  {
+    title: "Dropdown Menu",
+    slug: "dropdown-menu",
     component: Projects,
+  },
+  {
+    title: "Slide Menu",
+    slug: "slide-menu",
+    component: Projects,
+  },
+  {
+    title: "Pop-up Menu",
+    slug: "popup-menu",
+    component: Projects,
+  },
+  {
+    title: "Hover Image Slide Menu",
+    slug: "hover-image-slide-menu",
+    component: HoverImageSlideMenu,
   },
   {
     title: "Pixel Cursor Move",
@@ -20,19 +43,9 @@ const navItems: navItemsType[] = [
     component: PixelCursorMove,
   },
   {
-    title: "Dropdown Menu",
-    slug: "dropdown-menu",
-    component: HoverImageSlideAnimation,
-  },
-  {
-    title: "Slide Menu",
-    slug: "slide-menu",
-    component: HoverImageSlideAnimation,
-  },
-  {
-    title: "Pop-up Menu",
-    slug: "popup-menu",
-    component: HoverImageSlideAnimation,
+    title: "Mask Cursor Effect",
+    slug: "mask-cursor-effect",
+    component: MaskCursorEffect,
   },
 ];
 

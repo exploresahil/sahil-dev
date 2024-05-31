@@ -2,11 +2,16 @@
 
 #webSecHero {
   @include full-width;
-  height: 100vh;
+  @include webSecHero;
   padding-block: rem(100);
 
   h2 {
-    line-height: 1;
+    line-height: 1.1;
     text-align: center;
+    font-size: rem(24);
+
+    @include breakpoint(medium) {
+      font-size: rem(26);
+    }
   }
 }

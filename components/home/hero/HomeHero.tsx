@@ -3,10 +3,11 @@
 import Star from "@/components/ui/svg/Star";
 import "./style.scss";
 import Image from "next/image";
-import ImageSize from "@/app/utils/image-utils";
+import ImageSize from "@/utils/image-utils";
 import sahil from "@/public/assets/images/profile/sahil-hero.jpg";
 import { BiDownArrowAlt } from "react-icons/bi";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { homeTextVariants, homeWordVariants } from "@/utils/anim";
 
 const HomeHero = () => {
   const title = "Sahil Satpute";
@@ -19,26 +20,6 @@ const HomeHero = () => {
 
   const words = title.split(" ");
 
-  const wordVariants = {
-    animate: {
-      y: [100, 0],
-      opacity: [0, 1],
-      transition: {
-        type: "spring",
-        damping: 20,
-        duration: 0.2,
-      },
-    },
-  };
-
-  const textVariants = {
-    animate: {
-      transition: {
-        staggerChildren: 0.25,
-      },
-    },
-  };
-
   return (
     <section id="homeHero">
       <div className="container">
@@ -50,14 +31,15 @@ const HomeHero = () => {
               type: "spring",
               damping: 20,
               duration: 0.2,
+              delay: 0.5,
             },
           }}
         >
           Full Stack Designer
         </motion.h2>
-        <motion.h1 variants={textVariants} animate="animate">
+        <motion.h1 variants={homeTextVariants} animate="animate">
           {words.map((word, i) => (
-            <motion.span variants={wordVariants} key={i}>
+            <motion.span variants={homeWordVariants} key={i}>
               {word}
             </motion.span>
           ))}
@@ -66,7 +48,7 @@ const HomeHero = () => {
           className="star"
           animate={{
             opacity: [0, 1],
-            transition: { delay: 0.5 },
+            transition: { delay: 1.25 },
           }}
         >
           <Star right="0" top="55%" y="-50%" />
@@ -77,7 +59,7 @@ const HomeHero = () => {
         style={{ y: yPosition }}
         animate={{
           opacity: [0, 1],
-          transition: { delay: 1, duration: 0.5 },
+          transition: { delay: 1.5, duration: 0.5 },
         }}
       >
         <Image
@@ -91,7 +73,7 @@ const HomeHero = () => {
         className="sub"
         animate={{
           opacity: [0, 1],
-          transition: { delay: 1.5, duration: 1 },
+          transition: { delay: 2, duration: 1 },
         }}
       >
         <p>

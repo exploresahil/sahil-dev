@@ -1,6 +1,6 @@
 import Image from "next/image";
 import "./style.scss";
-import ImageSize from "@/app/utils/image-utils";
+import ImageSize from "@/utils/image-utils";
 import Accordian from "@/components/ui/accordian/Accordian";
 import askData from "./db";
 

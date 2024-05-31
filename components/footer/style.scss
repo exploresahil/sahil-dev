@@ -1,6 +1,6 @@
 @use "@/app/scss/variables" as *;
 
-footer {
+#homeFooter {
   @include full-width;
   padding-block: rem(50);
 

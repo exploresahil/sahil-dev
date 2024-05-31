@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { AiOutlinePlus } from "react-icons/ai";
+import { accordianDescVarients } from "@/utils/anim";
 
 interface Props {
   data: {
@@ -16,18 +17,6 @@ const Accordian = ({ data }: Props) => {
 
   const handleToggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
-  };
-
-  const descVarients = {
-    initial: {
-      height: 0,
-    },
-    enter: {
-      height: "auto",
-    },
-    exit: {
-      height: 0,
-    },
   };
 
   const buttonStyles = { display: "flex", justifyContent: "space-between" };
@@ -51,7 +40,7 @@ const Accordian = ({ data }: Props) => {
             <AnimatePresence initial={false}>
               {isOpen && (
                 <motion.div
-                  variants={descVarients}
+                  variants={accordianDescVarients}
                   initial="initial"
                   animate="enter"
                   exit="exit"

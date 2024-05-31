@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import Star from "../ui/svg/Star";
+import PageLink from "../ui/page-link/PageLink";
 
 const PageNotFound = () => {
   const firstText = useRef<HTMLHeadingElement>(null);
@@ -64,7 +65,9 @@ const PageNotFound = () => {
       </div>
       <div className="text-container">
         <p>Page not found</p>
-        <LinkButton href="/">Return Home</LinkButton>
+        <PageLink href="/">
+          <LinkButton href="/">Return Home</LinkButton>
+        </PageLink>
       </div>
     </section>
   );

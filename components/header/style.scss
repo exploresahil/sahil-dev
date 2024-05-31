@@ -1,6 +1,6 @@
 @use "@/app/scss/variables" as *;
 
-header {
+#homeHeader {
   @include full-width;
   height: rem(40);
   display: flex;

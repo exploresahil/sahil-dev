@@ -3,13 +3,13 @@ const projectsList = [
     number: "01",
     title: "Website Sections",
     description: "DESIGN | ANIMATION | NEXT | 2023",
-    href: "/projects/website-sections/hover-image-slide-effect",
+    href: "/projects/website-sections/parallax-scroll",
   },
   {
     number: "02",
     title: "Magazine",
     description: "DESIGN | ABSTRACT | NEXT | 2023",
-    href: "/magazine",
+    href: "/projects/magazine",
   },
   {
     number: "03",

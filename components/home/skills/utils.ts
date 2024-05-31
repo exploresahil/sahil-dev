@@ -20,8 +20,8 @@ const animateListItems = (
     gsap.fromTo(
       elements,
       {
-        y: 30,
-        x: 10,
+        y: 10,
+        x: 30,
         opacity: 0,
       },
       {

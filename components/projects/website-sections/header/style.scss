@@ -14,7 +14,7 @@
   }
 
   .header-title {
-    max-width: 70%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     gap: rem(10);
@@ -24,7 +24,11 @@
     }
 
     @include breakpoint(large) {
-      max-width: 20%;
+      max-width: 18%;
+    }
+
+    .breadcrumbs {
+      font-size: rem(12);
     }
 
     h2 {

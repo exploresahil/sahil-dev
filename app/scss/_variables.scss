@@ -91,3 +91,15 @@ $breakpoint-down: (
     padding-inline: 10vw;
   }
 }
+
+@mixin webSecHero {
+  height: calc(100vh - rem(40) - rem(114.4) - rem(60) - rem(1.5));
+
+  @include breakpoint(medium) {
+    height: calc(100vh - rem(40) - rem(80.4) - rem(60) - rem(1.5));
+  }
+
+  @include breakpoint(large) {
+    height: calc(100vh - rem(40) - rem(114.4) - rem(40) - rem(1.5));
+  }
+}

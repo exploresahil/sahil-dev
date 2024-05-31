@@ -1,0 +1,192 @@
+@use "@/app/scss/variables" as *;
+
+#parallaxScroll {
+  @include full-width;
+  overflow-x: clip;
+
+  .scroll-down {
+    width: 100%;
+    height: 70vh;
+    padding: 4vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    p {
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: rem(20);
+    }
+  }
+
+  .parallax-cont {
+    height: 300vh;
+    padding-top: 20vh;
+    padding-bottom: 30vh;
+    position: relative;
+
+    @include breakpoint(medium) {
+      height: 200vh;
+    }
+
+    @include breakpoint(large) {
+      height: 400vh;
+    }
+
+    .text {
+      @include rische;
+      font-size: rem(40);
+      text-align: center;
+      line-height: 1.1;
+      position: sticky;
+      top: 40vh;
+      z-index: 2;
+
+      @include breakpoint(medium) {
+        padding-inline: 16vw;
+        font-size: rem(50);
+        top: 45vh;
+      }
+
+      @include breakpoint(large) {
+        padding-inline: 20vw;
+        top: 40vh;
+
+        font-size: rem(60);
+      }
+    }
+
+    .img-cont {
+      top: 10%;
+      left: -55%;
+      position: absolute;
+      width: 100vw;
+      aspect-ratio: 4 / 5;
+
+      @include breakpoint(medium) {
+        width: 50%;
+        left: -10%;
+      }
+
+      img {
+        object-fit: cover;
+        filter: grayscale(1);
+      }
+
+      &-1 {
+        width: 80vw;
+        top: 20%;
+        left: 75%;
+
+        @include breakpoint(medium) {
+          top: 10%;
+          width: 40%;
+          left: 60%;
+        }
+      }
+
+      &-2 {
+        width: 70vw;
+        top: 35%;
+        left: -30%;
+
+        @include breakpoint(medium) {
+          width: 40%;
+          left: 0%;
+        }
+
+        @include breakpoint(large) {
+          left: 10%;
+        }
+      }
+
+      &-3 {
+        width: 60vw;
+        top: 40%;
+        left: 80%;
+
+        @include breakpoint(medium) {
+          top: 32%;
+          width: 70%;
+          left: 60%;
+        }
+
+        @include breakpoint(large) {
+          top: 45%;
+
+          left: 70%;
+          width: 30%;
+        }
+      }
+
+      &-4 {
+        width: 100vw;
+        top: 54%;
+        left: -80%;
+
+        @include breakpoint(medium) {
+          width: 50%;
+          left: 5%;
+        }
+
+        @include breakpoint(large) {
+          left: 5%;
+          width: 30%;
+        }
+      }
+
+      &-5 {
+        width: 70vw;
+        top: 60%;
+        left: 45%;
+
+        @include breakpoint(medium) {
+          width: 30%;
+          left: 70%;
+        }
+
+        @include breakpoint(large) {
+          top: 65%;
+          width: 25%;
+          left: 50%;
+        }
+      }
+
+      &-6 {
+        width: 100%;
+        top: 80%;
+        left: 0%;
+
+        @include breakpoint(medium) {
+          width: 100%;
+          aspect-ratio: 2 / 1;
+        }
+
+        @include breakpoint(large) {
+          aspect-ratio: 2 / 0.5;
+        }
+      }
+    }
+  }
+
+  .scroll-up {
+    width: 100%;
+    height: 70vh;
+    padding: 20vw 4vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    @include breakpoint(large) {
+      padding: 0 4vw;
+    }
+
+    p {
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: rem(20);
+    }
+  }
+}

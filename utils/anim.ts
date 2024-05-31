@@ -1,3 +1,24 @@
+export const homeWordVariants = {
+  animate: {
+    y: [100, 0],
+    opacity: [0, 1],
+    transition: {
+      type: "spring",
+      damping: 20,
+      duration: 0.2,
+    },
+  },
+};
+
+export const homeTextVariants = {
+  animate: {
+    transition: {
+      delayChildren: 0.5,
+      staggerChildren: 0.25,
+    },
+  },
+};
+
 export const slideLeft = {
   initial: {
     x: "100%",
@@ -23,5 +44,35 @@ export const opacity = {
   exit: {
     backgroundColor: "rgba(0, 0, 0, 0)",
     transition: { duration: 0.3, ease: [0.76, 0, 0.24, 1] },
+  },
+};
+
+export const warningMainVarients = {
+  initial: {
+    opacity: 0,
+  },
+  enter: {
+    opacity: 1,
+  },
+};
+
+export const warningDragVariants = {
+  initial: {
+    y: "100%",
+  },
+  enter: {
+    y: "0%",
+  },
+};
+
+export const accordianDescVarients = {
+  initial: {
+    height: 0,
+  },
+  enter: {
+    height: "auto",
+  },
+  exit: {
+    height: 0,
   },
 };

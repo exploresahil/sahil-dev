@@ -1,0 +1,67 @@
+@use "@/app/scss/variables" as *;
+.warning {
+  @include full-width;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  inset: 0;
+  color: $red;
+  z-index: 80;
+
+  .drag-cont {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50vh;
+    border-radius: rem(14) rem(14) 0 0;
+    background-color: $offLight;
+
+    .drag-btn-cont {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      padding-block: rem(5);
+
+      button {
+        height: rem(8);
+        width: 12vw;
+        cursor: grab;
+        touch-action: none;
+        border-radius: rem(1000);
+        background-color: rgba(217, 47, 28, 0.75);
+
+        @include breakpoint(medium) {
+          height: rem(12);
+        }
+      }
+    }
+
+    .content {
+      height: 100%;
+      padding-inline: 4vw;
+      padding-block: rem(40);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: rem(20);
+      justify-content: center;
+
+      @include breakpoint(medium) {
+        padding-inline: 26vw;
+      }
+
+      svg {
+        font-size: rem(30);
+      }
+
+      h2 {
+        line-height: 1.1;
+      }
+    }
+  }
+}

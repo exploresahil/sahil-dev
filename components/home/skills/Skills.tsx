@@ -50,7 +50,7 @@ const Skills = () => {
         animateListItems(
           liElements,
           container,
-          isDesktop ? "bottom 90%" : isTablet ? "bottom 80%" : "bottom bottom",
+          isDesktop ? "bottom 95%" : isTablet ? "bottom 80%" : "bottom bottom",
           0.4
         );
       }
