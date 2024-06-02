@@ -1,0 +1,44 @@
+@use "@/app/scss/variables" as *;
+
+#projectMenu {
+  .menuOne {
+    .page-cont {
+      nav {
+        height: 50%;
+        padding: 10vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: rem(10);
+
+        @include breakpoint(medium) {
+          position: absolute;
+          width: 40%;
+          height: 40%;
+          right: 0;
+        }
+
+        @include breakpoint(large) {
+          width: 35%;
+          padding: 5vw;
+          height: 50%;
+        }
+
+        h3 {
+          @include rische;
+        }
+
+        .nav-items {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          row-gap: rem(5);
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

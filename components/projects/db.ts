@@ -1,6 +1,7 @@
 import Projects from "../home/projects/Projects";
 import HoverImageSlideMenu from "./website-sections/components/HoverImageSlideMenu/HoverImageSlideMenu";
 import MaskCursorEffect from "./website-sections/components/MaskCursorEffect/MaskCursorEffect";
+import Menu from "./website-sections/components/Menu/Menu";
 import ParallaxScroll from "./website-sections/components/ParallaxScroll/ParallaxScroll";
 
 import PixelCursorMove from "./website-sections/components/PixelCursorMove/PixelCursorMove";
@@ -18,9 +19,9 @@ const navItems: navItemsType[] = [
     component: ParallaxScroll,
   },
   {
-    title: "Dropdown Menu",
-    slug: "dropdown-menu",
-    component: Projects,
+    title: "Menus",
+    slug: "menus",
+    component: Menu,
   },
   {
     title: "Slide Menu",
