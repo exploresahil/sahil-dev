@@ -68,11 +68,14 @@ export const warningDragVariants = {
 export const accordianDescVarients = {
   initial: {
     height: 0,
+    opacity: 0,
   },
   enter: {
     height: "auto",
+    opacity: 1,
   },
   exit: {
     height: 0,
+    opacity: 0,
   },
 };

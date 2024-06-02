@@ -51,3 +51,31 @@ ul,
 ol {
   list-style: none;
 }
+
+#accordian {
+  display: flex;
+  flex-direction: column;
+
+  .accordian {
+    border-top: rem(0.5) solid $red;
+
+    &:nth-last-of-type(1) {
+      border-bottom: rem(0.5) solid $red;
+    }
+
+    button {
+      padding-block: rem(20);
+      text-transform: uppercase;
+      font-size: rem(20);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .desc {
+      padding-bottom: rem(20);
+    }
+  }
+}

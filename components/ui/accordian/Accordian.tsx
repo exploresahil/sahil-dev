@@ -37,7 +37,7 @@ const Accordian = ({ data }: Props) => {
                 <AiOutlinePlus />
               </motion.span>
             </button>
-            <AnimatePresence initial={false}>
+            <AnimatePresence>
               {isOpen && (
                 <motion.div
                   variants={accordianDescVarients}
