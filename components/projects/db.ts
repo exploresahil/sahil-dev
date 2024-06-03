@@ -9,7 +9,7 @@ import PixelCursorMove from "./website-sections/components/PixelCursorMove/Pixel
 export interface navItemsType {
   title: string;
   slug: string;
-  component: React.FC;
+  component: React.ComponentType<any>;
 }
 
 const navItems: navItemsType[] = [
