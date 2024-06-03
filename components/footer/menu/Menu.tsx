@@ -6,7 +6,7 @@ const Menu = () => {
   return (
     <div id="menu">
       {projectsList.map((item, i) => (
-        <Link href={item.href} key={i}>
+        <Link href={item.href} key={i} className="removeCursor">
           <AnimatedText text={item.title} />
         </Link>
       ))}

@@ -7,7 +7,7 @@ const Socials = () => {
     <div className="social">
       {socialData.map((link, index) => (
         <GsapMagnetic key={index}>
-          <Link href={link.href} target="_blank">
+          <Link href={link.href} target="_blank" className="removeCursor">
             <link.icon />
           </Link>
         </GsapMagnetic>

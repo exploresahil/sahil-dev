@@ -16,8 +16,6 @@ const HomeHero = () => {
   const spring = useSpring(scrollYProgress, springConfig);
   const yPosition = useTransform(spring, [0, 1], [0, -100]);
 
-  //console.log("scrollYProgress->", scrollYProgress);
-
   const words = title.split(" ");
 
   return (
@@ -55,7 +53,8 @@ const HomeHero = () => {
         </motion.div>
       </div>
       <motion.div
-        className="img-cont"
+        className="img-cont cursorScale"
+        data-scale="10"
         style={{ y: yPosition }}
         animate={{
           opacity: [0, 1],
@@ -80,6 +79,7 @@ const HomeHero = () => {
           I craft digital experiences, <br></br> Turning pixels into
           possibilities.
         </p>
+
         <div className="scroll">
           scroll <BiDownArrowAlt />
         </div>

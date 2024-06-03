@@ -1,6 +1,9 @@
 @use "@/app/scss/variables" as *;
 
 #template {
+  @include full-width;
+  overflow: hidden;
+
   .temp-container {
     .panel {
       position: fixed;

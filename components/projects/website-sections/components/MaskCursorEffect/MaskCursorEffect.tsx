@@ -66,7 +66,7 @@ const MaskCursorEffect = () => {
   }, []);
 
   return (
-    <section id="maskCursor" ref={mainRef}>
+    <section id="maskCursor" className="removeCursor" ref={mainRef}>
       <Warning
         title="This section is best experienced in desktop or larger devices with cursor"
         desc="this section has a background that changes when mouse is hovered, please view in larger devices with cursor or view another section by tapping on the menu"

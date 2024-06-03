@@ -1,5 +1,6 @@
 "use client";
 import { color, motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
@@ -8,14 +9,6 @@ interface Props {
 }
 
 const AnimatedText = ({ text }: Props) => {
-  const [isMounted, setIsMounted] = useState<boolean>(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  //console.log("isMounted->", isMounted);
-
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1025px)",
   });
@@ -44,7 +37,7 @@ const AnimatedText = ({ text }: Props) => {
     },
   };
 
-  if (isMounted && isDesktopOrLaptop) {
+  if (isDesktopOrLaptop) {
     return (
       <motion.span
         initial="initial"
@@ -78,4 +71,6 @@ const AnimatedText = ({ text }: Props) => {
   }
 };
 
-export default AnimatedText;
+export default dynamic(() => Promise.resolve(AnimatedText), {
+  ssr: false,
+});

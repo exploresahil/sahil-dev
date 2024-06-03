@@ -1,0 +1,7 @@
+@use "@/app/scss/variables" as *;
+
+.custom-cursor {
+  background-color: #0ab5c6;
+  //background-color: $red;
+  mix-blend-mode: difference;
+}

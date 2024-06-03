@@ -9,10 +9,10 @@ const Header = () => {
 
   return (
     <header id="homeHeader">
-      <PageLink href="/" id="logo">
+      <PageLink href="/" id="logo" className="removeCursor">
         <AnimatedText text={logoText} />
       </PageLink>
-      <PageLink href="/contact" className="contact">
+      <PageLink href="/contact" className="contact removeCursor">
         <AnimatedText text={contactText} />
       </PageLink>
     </header>
