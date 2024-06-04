@@ -10,14 +10,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import ImageSize from "@/utils/image-utils";
 import { data } from "./db";
-import { useMediaQuery } from "react-responsive";
+import useResponsive from "@/hooks/useResponsive";
 
 const ParallaxScroll = () => {
   const parallaxRef = useRef<HTMLDivElement | null>(null);
-
-  const isDesktop = useMediaQuery({
-    query: "(min-width: 1025px)",
-  });
+  const { breakpoint } = useResponsive();
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -25,7 +22,7 @@ const ParallaxScroll = () => {
     const markers = false;
 
     gsap.to(".img-cont-0", {
-      y: isDesktop ? -500 : -100,
+      y: breakpoint === "large" ? -500 : -100,
       scrollTrigger: {
         trigger: ".img-cont-0",
         markers: markers,
@@ -37,7 +34,7 @@ const ParallaxScroll = () => {
     });
 
     gsap.to(".img-cont-1", {
-      y: isDesktop ? 100 : 60,
+      y: breakpoint === "large" ? 100 : 60,
       scrollTrigger: {
         trigger: ".img-cont-1",
         markers: markers,
@@ -49,7 +46,7 @@ const ParallaxScroll = () => {
     });
 
     gsap.to(".img-cont-2", {
-      y: isDesktop ? -140 : -40,
+      y: breakpoint === "large" ? -140 : -40,
       scrollTrigger: {
         trigger: ".img-cont-2",
         markers: markers,
@@ -61,7 +58,7 @@ const ParallaxScroll = () => {
     });
 
     gsap.to(".img-cont-3", {
-      y: isDesktop ? 100 : -20,
+      y: breakpoint === "large" ? 100 : -20,
       scrollTrigger: {
         trigger: ".img-cont-3",
         markers: markers,

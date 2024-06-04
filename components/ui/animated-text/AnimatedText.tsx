@@ -1,17 +1,13 @@
 "use client";
-import { color, motion } from "framer-motion";
-import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
+import useResponsive from "@/hooks/useResponsive";
+import { motion } from "framer-motion";
 
 interface Props {
   text: string;
 }
 
 const AnimatedText = ({ text }: Props) => {
-  const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-width: 1025px)",
-  });
+  const { breakpoint } = useResponsive();
 
   const words = text.split(" ").map((word) => word.split(""));
 
@@ -37,7 +33,7 @@ const AnimatedText = ({ text }: Props) => {
     },
   };
 
-  if (isDesktopOrLaptop) {
+  if (breakpoint === "large") {
     return (
       <motion.span
         initial="initial"
@@ -71,6 +67,4 @@ const AnimatedText = ({ text }: Props) => {
   }
 };
 
-export default dynamic(() => Promise.resolve(AnimatedText), {
-  ssr: false,
-});
+export default AnimatedText;

@@ -8,6 +8,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth !important;
+}
+
 body {
   font-family: $helvetica-regular;
   background-color: $offLight;

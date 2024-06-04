@@ -138,7 +138,7 @@
 
     .scroll {
       position: relative;
-      top: 180%;
+      top: 100%;
       width: fit-content;
       display: flex;
       align-items: center;
@@ -151,6 +151,10 @@
 
       @include breakpoint(large) {
         top: 40%;
+
+        &:hover {
+          color: $red;
+        }
       }
     }
   }

@@ -3,30 +3,22 @@
 import { useRef } from "react";
 import data from "./db";
 import "./style.scss";
-
-import { useMediaQuery } from "react-responsive";
 import { useGSAP } from "@gsap/react";
 import animateListItems from "./utils";
+import useResponsive from "@/hooks/useResponsive";
 
 const Skills = () => {
   const containerRefs = useRef<(HTMLDivElement | null)[]>([]);
   const main = useRef<HTMLDivElement | null>(null);
   const title = useRef<HTMLHeadingElement | null>(null);
-
-  const isTablet = useMediaQuery({
-    query: "(min-width: 820px)",
-  });
-
-  const isDesktop = useMediaQuery({
-    query: "(min-width: 1025px)",
-  });
+  const { breakpoint } = useResponsive();
 
   useGSAP(() => {
     if (title) {
       animateListItems(
         title.current,
         title.current,
-        isTablet ? "bottom 80%" : "bottom bottom",
+        breakpoint === "medium" ? "bottom 80%" : "bottom bottom",
         0
       );
     }
@@ -43,14 +35,22 @@ const Skills = () => {
         animateListItems(
           h3Element,
           container,
-          isDesktop ? "bottom 90%" : isTablet ? "bottom 80%" : "bottom bottom",
+          breakpoint === "large"
+            ? "bottom 90%"
+            : breakpoint === "medium"
+            ? "bottom 80%"
+            : "bottom bottom",
           0.2
         );
 
         animateListItems(
           liElements,
           container,
-          isDesktop ? "bottom 95%" : isTablet ? "bottom 80%" : "bottom bottom",
+          breakpoint === "large"
+            ? "bottom 95%"
+            : breakpoint === "medium"
+            ? "bottom 80%"
+            : "bottom bottom",
           0.4
         );
       }

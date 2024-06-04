@@ -8,6 +8,9 @@ import sahil from "@/public/assets/images/profile/sahil-hero.jpg";
 import { BiDownArrowAlt } from "react-icons/bi";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { homeTextVariants, homeWordVariants } from "@/utils/anim";
+import Link from "next/link";
+import { useEffect, useLayoutEffect } from "react";
+import Lenis from "lenis";
 
 const HomeHero = () => {
   const title = "Sahil Satpute";
@@ -15,8 +18,9 @@ const HomeHero = () => {
   const springConfig = { damping: 40 };
   const spring = useSpring(scrollYProgress, springConfig);
   const yPosition = useTransform(spring, [0, 1], [0, -100]);
-
   const words = title.split(" ");
+
+  useLayoutEffect(() => {}, []);
 
   return (
     <section id="homeHero">
@@ -80,9 +84,25 @@ const HomeHero = () => {
           possibilities.
         </p>
 
-        <div className="scroll">
-          scroll <BiDownArrowAlt />
-        </div>
+        <Link
+          onClick={(e) => {
+            e.preventDefault();
+            const lenis = new Lenis();
+            lenis.scrollTo("#homeProjects");
+
+            function raf(time: any) {
+              lenis.raf(time);
+              requestAnimationFrame(raf);
+            }
+
+            requestAnimationFrame(raf);
+          }}
+          href="#homeProjects"
+          className="scroll cursorScale"
+          data-scale="5"
+        >
+          projects <BiDownArrowAlt />
+        </Link>
       </motion.div>
     </section>
   );

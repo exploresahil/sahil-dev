@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
-import { pageAnimIn, pageAnimOut, pageAnimOutMob } from "@/utils/pageAnim";
+import { pageAnimOut, pageAnimOutMob } from "@/utils/pageAnim";
 import { ButtonHTMLAttributes } from "react";
 import { useMediaQuery } from "react-responsive";
 

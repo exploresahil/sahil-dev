@@ -2,7 +2,6 @@
 import "./style.scss";
 import { useState } from "react";
 import { MdWarning } from "react-icons/md";
-import { useMediaQuery } from "react-responsive";
 import useMeasure from "react-use-measure";
 import {
   motion,
@@ -11,6 +10,7 @@ import {
   useMotionValue,
 } from "framer-motion";
 import { warningDragVariants, warningMainVarients } from "@/utils/anim";
+import useResponsive from "@/hooks/useResponsive";
 
 type Props = {
   title: string;
@@ -24,9 +24,7 @@ const Warning = ({ title, desc }: Props) => {
   const [scope, animate] = useAnimate();
   const [drawerRef, { height }] = useMeasure();
 
-  const isDesktop = useMediaQuery({
-    query: "(min-width: 1025px)",
-  });
+  const { breakpoint } = useResponsive();
 
   const handleClose = async () => {
     animate(scope.current, {
@@ -43,7 +41,7 @@ const Warning = ({ title, desc }: Props) => {
   };
   return (
     <>
-      {isOpen && !isDesktop && (
+      {isOpen && breakpoint !== "large" && (
         <motion.div
           variants={warningMainVarients}
           initial="initial"
