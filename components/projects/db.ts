@@ -1,4 +1,5 @@
 import Projects from "../home/projects/Projects";
+import AudioVisualizer from "./website-sections/components/AudioVisualizer/AudioVisualizer";
 import HoverImageSlideMenu from "./website-sections/components/HoverImageSlideMenu/HoverImageSlideMenu";
 import MaskCursorEffect from "./website-sections/components/MaskCursorEffect/MaskCursorEffect";
 import Menu from "./website-sections/components/Menu/Menu";
@@ -23,7 +24,11 @@ const navItems: navItemsType[] = [
     slug: "menus",
     component: Menu,
   },
-
+  {
+    title: "Audio Visualizer",
+    slug: "audio-visualizer",
+    component: AudioVisualizer,
+  },
   {
     title: "Hover Image Slide Menu",
     slug: "hover-image-slide-menu",

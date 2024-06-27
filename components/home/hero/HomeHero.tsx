@@ -17,7 +17,7 @@ const HomeHero = () => {
   const { scrollYProgress } = useScroll();
   const springConfig = { damping: 40 };
   const spring = useSpring(scrollYProgress, springConfig);
-  const yPosition = useTransform(spring, [0, 1], [0, -100]);
+  const yPosition = useTransform(spring, [0, 1], [0, -200]);
   const words = title.split(" ");
 
   useLayoutEffect(() => {}, []);

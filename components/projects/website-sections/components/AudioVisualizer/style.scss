@@ -1,0 +1,246 @@
+@use "@/app/scss/variables" as *;
+
+#AudioVisualizer {
+  @include full-width;
+  padding-top: rem(40);
+  display: flex;
+  flex-direction: column;
+  gap: rem(10);
+
+  @include breakpoint(medium) {
+    padding-inline: 30vw;
+  }
+
+  @include breakpoint(large) {
+    padding-inline: 39vw;
+  }
+
+  .uploadBtn {
+    background-color: $red;
+    color: $offLight;
+    padding-block: rem(10);
+    border-radius: rem(10);
+    cursor: pointer;
+  }
+
+  .canvas-cont {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    border: rem(0.5) solid $red;
+    border-radius: rem(10);
+    overflow: hidden;
+
+    canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    .blur {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(rem(10));
+    }
+  }
+
+  .fileName {
+    margin-bottom: rem(10);
+  }
+
+  audio {
+    display: none;
+  }
+
+  .audioBtns {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: rem(100);
+    padding: rem(5) rem(12) rem(5) rem(5);
+    border: rem(0.5) solid $red;
+
+    .play {
+      $size: rem(40);
+      cursor: pointer;
+      svg {
+        width: $size;
+        height: $size;
+        display: grid;
+        place-content: center;
+      }
+    }
+
+    .progress {
+      display: flex;
+      gap: rem(10);
+      font-size: 0.8rem;
+      align-items: center;
+
+      input[type="range"] {
+        $background: $red;
+        -webkit-appearance: none;
+        appearance: none;
+        background: $background;
+        cursor: pointer;
+        height: rem(5);
+        border-radius: rem(100);
+
+        &::-webkit-slider-runnable-track {
+          background: $background;
+          height: rem(5);
+          border-radius: rem(100);
+        }
+
+        &::-moz-range-track {
+          background: $background;
+          height: rem(5);
+          border-radius: rem(100);
+        }
+
+        &::-webkit-slider-thumb {
+          $size: rem(10);
+          -webkit-appearance: none;
+          appearance: none;
+          margin-top: rem(-2.5);
+          background-color: $offDark;
+          height: $size;
+          width: $size;
+          border-radius: rem(100);
+        }
+      }
+    }
+
+    .mute {
+      $size: rem(20);
+      cursor: pointer;
+
+      svg {
+        width: $size;
+        height: $size;
+        display: grid;
+        place-content: center;
+      }
+    }
+  }
+
+  .disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .settings {
+    margin-top: rem(20);
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+
+    h3 {
+      margin-bottom: rem(10);
+      padding-bottom: rem(10);
+      border-bottom: rem(0.5) solid $red;
+      @include rische;
+    }
+
+    .sensitivity,
+    .barColor,
+    .blur,
+    .visualMode {
+      display: flex;
+      align-items: center;
+      gap: rem(15);
+
+      input[type="range"] {
+        $background: $red;
+        -webkit-appearance: none;
+        appearance: none;
+        background: $background;
+        cursor: pointer;
+        height: rem(5);
+        border-radius: rem(100);
+        width: 100%;
+
+        &::-webkit-slider-runnable-track {
+          background: $background;
+          height: rem(5);
+          border-radius: rem(100);
+        }
+
+        &::-moz-range-track {
+          background: $background;
+          height: rem(5);
+          border-radius: rem(100);
+        }
+
+        &::-webkit-slider-thumb {
+          $size: rem(10);
+          -webkit-appearance: none;
+          appearance: none;
+          margin-top: rem(-2.5);
+          background-color: $offDark;
+          height: $size;
+          width: $size;
+          border-radius: rem(100);
+        }
+      }
+
+      .buttons {
+        display: flex;
+        align-items: center;
+        gap: rem(10);
+
+        button {
+          padding: rem(5) rem(10);
+          border: rem(0.5) solid $red;
+          border-radius: rem(100);
+          cursor: pointer;
+
+          transition: color 300ms cubic-bezier(0.45, 0, 0.55, 1),
+            background 300ms cubic-bezier(0.45, 0, 0.55, 1);
+        }
+      }
+
+      .bar-active {
+        .bar {
+          background-color: $red;
+          color: $offLight;
+        }
+      }
+
+      .wave-active {
+        .wave {
+          background-color: $red;
+          color: $offLight;
+        }
+      }
+
+      input[type="color"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: rem(55);
+        height: rem(35);
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        &::-webkit-color-swatch {
+          border: none;
+          border-radius: rem(100);
+        }
+
+        &::-moz-color-swatch {
+          border: none;
+          border-radius: rem(100);
+        }
+      }
+    }
+
+    .bottom {
+      display: flex;
+      gap: rem(20);
+    }
+  }
+}
