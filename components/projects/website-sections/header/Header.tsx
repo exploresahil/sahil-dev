@@ -26,7 +26,11 @@ const Header = () => {
   return (
     <section id="projectsHeader">
       <div className="header-title">
-        <Link className="breadcrumbs" href="/projects">
+        <Link
+          className="breadcrumbs cursorScale"
+          data-scale="5"
+          href="/projects"
+        >
           Projects
         </Link>
         <h2>Website Sections</h2>

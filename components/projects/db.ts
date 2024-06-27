@@ -9,7 +9,7 @@ import PixelCursorMove from "./website-sections/components/PixelCursorMove/Pixel
 export interface navItemsType {
   title: string;
   slug: string;
-  component: React.ComponentType<any>;
+  component: React.FC;
 }
 
 const navItems: navItemsType[] = [
@@ -23,16 +23,7 @@ const navItems: navItemsType[] = [
     slug: "menus",
     component: Menu,
   },
-  {
-    title: "Slide Menu",
-    slug: "slide-menu",
-    component: Projects,
-  },
-  {
-    title: "Pop-up Menu",
-    slug: "popup-menu",
-    component: Projects,
-  },
+
   {
     title: "Hover Image Slide Menu",
     slug: "hover-image-slide-menu",

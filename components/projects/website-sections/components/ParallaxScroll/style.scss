@@ -35,24 +35,20 @@
     }
 
     .text {
+      display: block;
       @include rische;
       font-size: rem(40);
       text-align: center;
       line-height: 1.1;
-      position: sticky;
-      top: 40vh;
       z-index: 2;
 
       @include breakpoint(medium) {
         padding-inline: 16vw;
         font-size: rem(50);
-        top: 45vh;
       }
 
       @include breakpoint(large) {
         padding-inline: 20vw;
-        top: 40vh;
-
         font-size: rem(60);
       }
     }

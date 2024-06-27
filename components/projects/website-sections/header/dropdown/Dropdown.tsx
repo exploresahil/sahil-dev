@@ -44,7 +44,7 @@ const Dropdown = ({ setSelectedData, data, isOpen, setOpen }: Props) => {
 
   return (
     <div id="projectsDropdown">
-      <button onClick={() => setOpen(true)}>
+      <button onClick={() => setOpen(true)} className="removeCursor">
         <AnimatedText text="menu" />
       </button>
       <AnimatePresence initial={false}>

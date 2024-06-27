@@ -22,6 +22,7 @@ const CustomCursor: React.FC = () => {
   const y = useMotionValue(cursorPosition.y);
 
   useLayoutEffect(() => {
+    setHoverScale(1);
     if (isDesktop) {
       const moveCursor = (e: MouseEvent) => {
         setCursorPosition({ x: e.clientX, y: e.clientY });
@@ -91,7 +92,7 @@ const CustomCursor: React.FC = () => {
           opacity: isVisible ? 1 : 0,
           transition: {
             scale: { type: "tween", duration: 0.3 },
-            opacity: { type: "tween", duration: 0.2 },
+            opacity: { type: "tween", duration: 0.1 },
           },
         }}
       />

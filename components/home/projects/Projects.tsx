@@ -73,7 +73,7 @@ const Projects = () => {
                       transition={{
                         duration: 0.2,
                         type: "tween",
-                        ease: "easeInOut",
+                        ease: [0.76, 0, 0.24, 1],
                       }}
                     />
                   )}
@@ -87,6 +87,7 @@ const Projects = () => {
                   href={pro.href}
                   onMouseEnter={() => handleLinkHover(i)}
                   onMouseLeave={() => handleLinkLeave(i)}
+                  className="removeCursor"
                 >
                   <div className="square">
                     <p>{pro.number}</p>
@@ -106,7 +107,7 @@ const Projects = () => {
                       transition={{
                         duration: 0.2,
                         type: "tween",
-                        ease: "easeInOut",
+                        ease: [0.76, 0, 0.24, 1],
                       }}
                     />
                   )}
